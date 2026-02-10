@@ -20,7 +20,7 @@ public class PraktikumPemilihan24 {
         if (tugas < 0 || tugas > 100 || kuis < 0 || kuis > 100 || uts < 0 || uts > 100 || uas < 0 || uas > 100) {
             System.out.println("Nilai yang dimasukkan harus antara 0 sampai 100");
         }else{
-            double nilaiAkhir = (0.2 * tugas) + (0.2 * kuis) + (0.3 * uts) + (0.4 * uas);
+            double nilaiAkhir = (0.2 * tugas) + (0.2 * kuis) + (0.3 * uts) + (0.3 * uas);
 
             String grade;
             if (nilaiAkhir > 80) grade = "A";
