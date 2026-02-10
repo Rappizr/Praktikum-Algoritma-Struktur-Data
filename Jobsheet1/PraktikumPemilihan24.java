@@ -8,13 +8,13 @@ public class PraktikumPemilihan24 {
         System.out.println("Program menghitung nilai akhir mahasiswa");
         System.out.println("==========================================");
 
-        System.out.println("Masukkan nilai tugas: ");
+        System.out.print("Masukkan nilai tugas: ");
         double tugas = sc.nextDouble();
-        System.out.println("Masukkan nilai kuis: ");
+        System.out.print("Masukkan nilai kuis: ");
         double kuis = sc.nextDouble();
-        System.out.println("Masukkan nilai uts: ");
+        System.out.print("Masukkan nilai uts: ");
         double uts = sc.nextDouble();
-        System.out.println("Masukkan nilai uas: ");
+        System.out.print("Masukkan nilai uas: ");
         double uas = sc.nextDouble();
 
         if (tugas < 0 || tugas > 100 || kuis < 0 || kuis > 100 || uts < 0 || uts > 100 || uas < 0 || uas > 100) {
