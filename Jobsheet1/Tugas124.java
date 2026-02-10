@@ -22,7 +22,6 @@ public class Tugas124 {
         System.out.print("Masukkan Kode plat nomer : ");
         char input = sc.next().toUpperCase().charAt(0);
 
-        
         int index = -1;
         for (int i = 0; i < Kode.length; i++) {
             if (Kode[i] == input) {
