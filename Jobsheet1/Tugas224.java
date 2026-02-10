@@ -36,11 +36,16 @@ public class Tugas224 {
     }
 
     public static void cariBerdasarkanHari(String[][] j, String hari) {
+        boolean ditemukan = false;
         System.out.println("\nJadwal pada hari " + hari + ":");
         for (String[] r : j) {
             if (r[2].equalsIgnoreCase(hari)) {
                 System.out.println(r[0] + " | " + r[1] + " | " + r[3]);
+                ditemukan = true;
             }
+        }
+        if(!ditemukan){
+            System.out.println("Maaf, tidak ada mata kuliah di hari "+hari);
         }
     }
 }
