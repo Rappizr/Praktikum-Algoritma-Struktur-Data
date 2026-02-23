@@ -16,6 +16,10 @@ public class mahasiswamain24 {
         mahasiswa24 mhs2 =new mahasiswa24("Ammisa nabila","2141720160", 3.25,"TI 2L");
         mhs2.updateIpk(3.30);
         mhs2.tampilkanInformasi();
+
+        mahasiswa24 mhsRappi = new mahasiswa24("Mukhammad Raffi Zabra","254107020059",3.48,"TI 1G");
+        mhsRappi.updateIpk(3.50);
+        mhsRappi.tampilkanInformasi();
     }
 }
 
