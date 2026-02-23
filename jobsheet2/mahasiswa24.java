@@ -1,9 +1,21 @@
 package jobsheet2;
 
 public class mahasiswa24 {
+    String nama;
+    String nim;
+    String kelas;
+    double ipk;
 
-  String nama, nim, kelas;
-        double ipk;
+    public mahasiswa24() {
+    }
+
+public mahasiswa24(String nm, String nim, double ipk, String kls){
+    nama = nm;
+    this.nim = nim;
+    this.ipk = ipk;
+    kelas  = kls;
+}
+
     void tampilkanInformasi () {
     System.out.println("NAMA: "+nama);
     System.out.println("NIM: "+nim);
