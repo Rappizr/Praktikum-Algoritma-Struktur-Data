@@ -25,16 +25,11 @@ public class dosendemo24 {
             arrayofdaftardosen[i] = new dosen24(kode, nama, usia, jenisKelamin);
         }
 
-        int counter = 1;
-        for (dosen24 dsn : arrayofdaftardosen){
-           System.out.println("daftar dosen ke- "+counter);
-           System.out.println("kode : "+dsn.kode);
-           System.out.println("nama : "+dsn.nama);
-           System.out.println("jenis kelamin : "+(dsn.jenisKelamin ? "pria" : "wanita"));
-           System.out.println("usia : "+dsn.usia);
-           System.out.println("----------------------------");
-           counter++;
-        }
+        datadosen24.datasemuadosen(arrayofdaftardosen);
+        datadosen24.jumlahdosenperjeniskelamin(arrayofdaftardosen);
+        datadosen24.reratadosenperjeniskelamin(arrayofdaftardosen);
+        datadosen24.infoDosenPalingTua(arrayofdaftardosen);
+        datadosen24.infoDosenPalingMuda(arrayofdaftardosen);
         sc.close();
     }
     
