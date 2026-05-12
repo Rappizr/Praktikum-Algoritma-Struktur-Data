@@ -5,41 +5,57 @@ import java.util.Scanner;
 public class mahasiswademo24 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Masukkan jumlah mahasiswa: ");
-        int jml = sc.nextInt();
-        mahasiswaberprestasi24 list = new mahasiswaberprestasi24(jml);
-        
-        for(int i = 0; i < jml; i++) {
-            System.out.println("------------------------------------");
-            System.out.println("Input Data Mahasiswa ke-" + (i+1));
-            System.out.print("Nama  : ");
-            sc.nextLine(); 
-            String nama = sc.nextLine();
-            System.out.print("NIM   : ");
+
+        System.out.print("Masukkan jumlah mahasiswa : ");
+        int jumMhs = sc.nextInt();
+        sc.nextLine();
+
+        mahasiswaberprestasi24 list = new mahasiswaberprestasi24(jumMhs);
+
+        for (int i = 0; i < jumMhs; i++) {
+            System.out.println("Masukkan Data Mahasiswa ke-" + (i + 1));
+            System.out.print("NIM : ");
             String nim = sc.nextLine();
+            System.out.print("Nama : ");
+            String nama = sc.nextLine();
             System.out.print("Kelas : ");
             String kelas = sc.nextLine();
-            System.out.print("IPK   : ");
-            double ipk = sc.nextDouble();
-            
-            mahasiswa24 m = new mahasiswa24(nim, nama, kelas, ipk);
-            list.tambah(m);
+            System.out.print("IPK : ");
+            String ip = sc.nextLine();
+            Double ipk = Double.parseDouble(ip);
+            System.out.println("---");
+            list.tambah(new mahasiswa24(nim, nama, kelas, ipk));
         }
 
-        System.out.println("\nData mahasiswa sebelum sorting: ");
         list.tampil();
 
-        System.out.println("Data Mahasiswa setelah sorting berdasarkan IPK (DESC): ");
-        list.bubbleSort();
-        list.tampil();
+        // melakukan pencarian data sequential
+        System.out.println("-------------------------------");
+        System.out.println("Pencarian data");
+        System.out.println("-------------------------------");
+        System.out.print("masukkan ipk mahasiswa yang dicari: ");
+        System.out.print("IPK: ");
+        double cari = sc.nextDouble();
 
-        System.out.println("Data yang sudah terurut menggunakan SELECTION SORT (ASC)");
-        list.selectionSort();
-        list.tampil();
+        System.out.println("menggunakan sequential searching");
+        double posisi = list.sequentialSearching(cari);
+        int pss = (int) posisi;
+        list.tampilPosisi(cari, pss);
+        list.tampilDataSetSearch(cari, pss);
 
-        System.out.println("Data yang sudah terurut menggunakan INSERTION SORT (ASC)");
-        list.insertionSort();
-        list.tampil();
+        //melakukan pencarian data Binary
+           System.out.println("\n-------------------------------");
+        System.out.println("BINARY SEARCH");
+        System.out.println("--------------------------");
+        System.out.print("Masukkan IPK yang dicari: ");
+        double cari2 = sc.nextDouble();
+        System.out.println("--------------------------");
+        System.out.println("Menggunakan binary search");
+        System.out.println("--------------------------");
+        double posisi2 = list.findBinarySearch(cari2, 0, jumMhs -1);
+        int pss2= (int)posisi2;
+        list.tampilPosisi(cari2, pss2);
+        list.tampilDataSetSearch(cari2, pss2);
 
         sc.close();
     }
