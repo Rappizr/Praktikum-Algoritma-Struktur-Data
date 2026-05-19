@@ -19,6 +19,44 @@ public class doublelinkedlistpembeli24 {
         size++;
     }
 
+    public void addFirst(pembeli24 data) {
+        if (isEmpty()) {
+            head = tail = new nodepembeli24(null, data, null);
+        } else {
+            nodepembeli24 newNode = new nodepembeli24(null, data, head);
+            head.prev = newNode;
+            head = newNode;
+        }
+        size++;
+    }
+
+    public void addAt(int index, pembeli24 data) {
+        if (index <= 1 || isEmpty()) {
+            addFirst(data);
+            return;
+        }
+        if (index > size) {
+            addLast(data);
+            return;
+        }
+        nodepembeli24 current = head;
+        for (int i = 1; i < index - 1; i++) {
+            current = current.next;
+        }
+        if (current == tail) {
+            addLast(data);
+        } else {
+            nodepembeli24 newNode = new nodepembeli24(current, data, current.next);
+            current.next.prev = newNode;
+            current.next = newNode;
+            size++;
+        }
+    }
+
+    public void addEvenPriority(pembeli24 data) {
+        addAt(3, data);
+    }
+
     public pembeli24 removeFirst() throws Exception {
         if (isEmpty()) {
             throw new Exception("Antrian Kosong!");

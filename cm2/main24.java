@@ -16,9 +16,10 @@ public class main24 {
             System.out.println("SISTEM ANTRIAN ROYAL DELISH");
             System.out.println("=====================================");
             System.out.println("1. Tambah Antrian");
-            System.out.println("2. Cetak Antrian");
-            System.out.println("3. Hapus Antrian dan Pesan");
-            System.out.println("4. Laporan pesanan24");
+            System.out.println("2. Tambah Antrian Prioritas");
+            System.out.println("3. Cetak Antrian");
+            System.out.println("4. Hapus Antrian dan Pesan");
+            System.out.println("5. Laporan pesanan24");
             System.out.println("0. Keluar");
             System.out.print("Pilih menu : ");
             menu = sc.nextInt();
@@ -36,12 +37,24 @@ public class main24 {
                     System.out.println("Antrian berhasil ditambahkan dengan nomor: " + counterAntrian);
                     counterAntrian++;
                     break;
-                    
+
                 case 2:
-                    antrian.print();
+                    System.out.print("Nama pembeli24 : ");
+                    String namaPrioritas = sc.nextLine();
+                    System.out.print("No HP        : ");
+                    String noHpPrioritas = sc.nextLine();
+                    
+                    pembeli24 pPrioritas = new pembeli24(counterAntrian, namaPrioritas, noHpPrioritas);
+                    antrian.addEvenPriority(pPrioritas);
+                    System.out.println("Antrian prioritas ditambahkan pada posisi ke-3 dengan nomor: " + counterAntrian);
+                    counterAntrian++;
                     break;
                     
                 case 3:
+                    antrian.print();
+                    break;
+                    
+                case 4:
                     try {
                         pembeli24 dipanggil = antrian.removeFirst();
                         System.out.println("\nPemanggilan Antrian atas nama " + dipanggil.namapembeli);
@@ -61,11 +74,11 @@ public class main24 {
                         
                         System.out.println(dipanggil.namapembeli + " telah memesan " + psn.namapesanan);
                     } catch (Exception e) {
-                        System.out.println(e.getMessage());
+                        System.out.println("Antrian kosong!");
                     }
                     break;
                     
-                case 4:
+                case 5:
                     daftarpesanan24.printLaporan();
                     break;
                     
